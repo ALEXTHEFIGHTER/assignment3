@@ -33,6 +33,7 @@ jobs:
         with:
           context: ./web
           push: true
+          no-cache: true
           tags: ghcr.io/alexthefighter/assignment3-web:latest
       
       - name: Build and push redis image
@@ -40,5 +41,6 @@ jobs:
         with:
           context: ./redis
           push: true
+          no-cache: true
           tags: ghcr.io/alexthefighter/assignment3-redis:latest
 
