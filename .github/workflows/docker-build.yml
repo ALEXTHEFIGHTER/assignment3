@@ -34,3 +34,11 @@ jobs:
           context: ./web
           push: true
           tags: ghcr.io/alexthefighter/assignment3-web:latest
+      
+      - name: Build and push redis image
+        uses: docker/build-push-action@v4
+        with:
+          context: ./redis
+          push: true
+          tags: ghcr.io/alexthefighter/assignment3-redis:latest
+
