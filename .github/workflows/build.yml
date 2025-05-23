@@ -21,11 +21,13 @@ jobs:
 
       - name: Build and push Webapp image
         run: |
-          docker build -t ghcr.io/${{ github.repository }}/assignment3-webapp:latest ./webapp
-          docker push ghcr.io/${{ github.repository }}/assignment3-webapp:latest
+          IMAGE_NAME=ghcr.io/alexthefighter/assignment3/assignment3-webapp:latest
+          docker build -t $IMAGE_NAME ./webapp
+          docker push $IMAGE_NAME
 
       - name: Tag and push Postgres image
         run: |
           docker pull postgres
-          docker tag postgres ghcr.io/${{ github.repository }}/assignment3-db:latest
-          docker push ghcr.io/${{ github.repository }}/assignment3-db:latest
+          IMAGE_NAME=ghcr.io/alexthefighter/assignment3/assignment3-db:latest
+          docker tag postgres $IMAGE_NAME
+          docker push $IMAGE_NAME
